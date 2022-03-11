@@ -83,5 +83,50 @@ func main() {
 
 }
 
+// composition
+package main
+
+import (
+	"fmt"
+
+	"github.com/formacao-go/go-orientacao-objetos/accounts"
+	"github.com/formacao-go/go-orientacao-objetos/clients"
+)
+
+func main() {
+	clientDavi := clients.Holder{
+		Name:       "Davi",
+		CPF:        "001.002.003-44",
+		Occupation: "Software Developer",
+	}
+
+	daviAccount := accounts.CurrentAccount{
+		Holder:        clientDavi,
+		AgencyNumber:  3879,
+		AccountNumber: 1212,
+	}
+
+	clientJhoy := clients.Holder{
+		Name:       "Joelma",
+		CPF:        "001.002.003-44",
+		Occupation: "Manager",
+	}
+
+	jhoyAccount := accounts.CurrentAccount{
+		Holder:        clientJhoy,
+		AgencyNumber:  3879,
+		AccountNumber: 1414,
+	}
+
+	fmt.Println(daviAccount)
+	fmt.Println(jhoyAccount)
+
+	// status := daviAccount.Transfer(150, &jhoyAccount)
+
+	fmt.Println(daviAccount.GetBalance())
+	fmt.Println(jhoyAccount.GetBalance())
+}
+
+
 
 ```

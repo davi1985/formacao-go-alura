@@ -1,10 +1,11 @@
 package accounts
 
+import "github.com/formacao-go/go-orientacao-objetos/clients"
+
 type CurrentAccount struct {
-	holder        string
-	agencyNumber  int
-	accountNumber int
-	balance       float64
+	Holder                      clients.Holder
+	AgencyNumber, AccountNumber int
+	balance                     float64
 }
 
 func (c *CurrentAccount) Withraw(withdrawValue float64) string {
@@ -38,4 +39,8 @@ func (c *CurrentAccount) Transfer(amountForTransfer float64, accountDestiny *Cur
 	}
 
 	return false
+}
+
+func (c *CurrentAccount) GetBalance() float64 {
+	return c.balance
 }
