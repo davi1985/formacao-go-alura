@@ -7,7 +7,7 @@
 - [x] Fundamentos Go
 - [x] Orientação a Objetos
 - [x] Fundamentos de uma aplicação web
-- [ ] Desenvolvendo API Rest
+- [x] Desenvolvendo API Rest
 - [ ] Go e Gin - API rest com simplicidade
 - [ ] Validações, testes e páginas HTML
 
