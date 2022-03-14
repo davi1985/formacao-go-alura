@@ -1,0 +1,21 @@
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.person {
+  background: #f2f2f2;
+  padding: 1rem;
+}
+
+.person + .person {
+  margin-top: 1rem;
+}
+
+p {
+  margin: 25px;
+  color: #5a5c5f;
+  font-size: 18px;
+  line-height: 20px;
+}
