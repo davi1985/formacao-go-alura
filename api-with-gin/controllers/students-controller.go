@@ -9,7 +9,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func ShowAllStudents(c *gin.Context) {
+func Index(c *gin.Context) {
 	var students []models.Student
 
 	database.DB.Find(&students)
@@ -37,6 +37,23 @@ func Create(c *gin.Context) {
 	}
 
 	database.DB.Create(&student)
+
+	c.JSON(http.StatusCreated, student)
+}
+
+func FindById(c *gin.Context) {
+	id := c.Params.ByName("id")
+	var student models.Student
+
+	database.DB.First(&student, id)
+
+	if student.ID == 0 {
+		c.JSON(http.StatusNotFound, gin.H{
+			"Not found": "Student not found",
+		})
+
+		return
+	}
 
 	c.JSON(http.StatusOK, student)
 }
