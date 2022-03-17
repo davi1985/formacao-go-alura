@@ -1,4 +1,4 @@
-<h1 align="center">Formacao Go</h1>
+<h1 align="center">Formacão Go Alura</h1>
 
 <img src="./golang.png" />
 
