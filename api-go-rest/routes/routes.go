@@ -15,8 +15,8 @@ func HandleRequest() {
 	r.Use(middlewares.ContentTypeMiddleware)
 
 	r.HandleFunc("/", controllers.Home)
-	r.HandleFunc("/api/personalities", controllers.GetAll).Methods("GET")
-	r.HandleFunc("/api/personalities/{id}", controllers.GetById).Methods("GET")
+	r.HandleFunc("/api/personalities", controllers.Index).Methods("GET")
+	r.HandleFunc("/api/personalities/{id}", controllers.FindById).Methods("GET")
 
 	r.HandleFunc("/api/personalities", controllers.Create).Methods("POST")
 	r.HandleFunc("/api/personalities/{id}", controllers.Edit).Methods("PUT")

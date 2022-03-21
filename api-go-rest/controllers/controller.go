@@ -14,7 +14,7 @@ func Home(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "Home page")
 }
 
-func GetAll(w http.ResponseWriter, r *http.Request) {
+func Index(w http.ResponseWriter, r *http.Request) {
 	var p []models.Personality
 
 	database.DB.Find(&p)
@@ -22,7 +22,7 @@ func GetAll(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(p)
 }
 
-func GetById(w http.ResponseWriter, r *http.Request) {
+func FindById(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	id := vars["id"]
 
